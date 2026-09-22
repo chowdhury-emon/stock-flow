@@ -11,8 +11,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-console.log("App is running :", app);
+// Initialize Firebase, Connect my nextjs app to firebase
+export const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
-export {app}
