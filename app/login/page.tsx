@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/co
 import { Field, FieldDescription, FieldGroup, FieldLabel, } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import Link from "next/link";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function LoginPage() {
     const [email, setEmail] = useState<string>("");
@@ -35,7 +36,7 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="border grid place-items-center">
+        <div className="grid place-items-center">
 
             <Card className="min-w-sm">
                 <CardHeader>
@@ -67,7 +68,10 @@ export default function LoginPage() {
                                     onChange={(e) => setPassword(e.target.value)} />
                             </Field>
                             <Field>
-                                <Button type="submit" disabled={isLoading}>Login</Button>
+                                <Button type="submit" disabled={isLoading}>
+                                    {isLoading && <Spinner />}
+                                    Login
+                                </Button>
 
                                 <FieldDescription className="text-center">
                                     Don't have an account? <Link href={"/register"}>Sign up</Link>

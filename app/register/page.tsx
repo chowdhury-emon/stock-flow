@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card"
 import { Field, FieldDescription, FieldGroup, FieldLabel, } from "@/components/ui/field"
+import { Spinner } from "@/components/ui/spinner"
 import { Input } from "@/components/ui/input"
 import Link from "next/link";
 import { toast } from "sonner";
@@ -38,7 +39,7 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className="border grid place-items-center">
+        <div className="grid place-items-center">
 
             <Card className="min-w-sm">
                 <CardHeader>
@@ -84,7 +85,13 @@ export default function RegisterPage() {
                             </Field>
                             <Field>
                                 <Button type="submit" disabled={isLoading}>
-                                    {isLoading ? "Creating New User" : "Create Account"}
+
+                                    {isLoading ?
+                                        (<>
+                                            <Spinner data-icon="inline-start" />
+                                            Creating User Account
+                                        </>)
+                                        : "Create Account"}
                                 </Button>
 
                                 <FieldDescription className="text-center">
