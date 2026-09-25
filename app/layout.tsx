@@ -26,10 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full ">
-        <header className="sticky top-0 z-99">
+        <header className="sticky top-0 z-99 bg-background border-b">
           <Header />
         </header>
-        <main className="min-h-screen grid">
+        <main className="container mx-auto min-h-[calc(100vh-6rem)] grid p-4">
           {children}
         </main>
         <footer>

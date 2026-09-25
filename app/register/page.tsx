@@ -41,7 +41,7 @@ export default function RegisterPage() {
     return (
         <div className="grid place-items-center">
 
-            <Card className="min-w-sm">
+            <Card className="min-w-xs sm:min-w-sm">
                 <CardHeader>
                     <CardTitle>Create an account</CardTitle>
                     <CardDescription>

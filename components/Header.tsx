@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <div className="bg-background border-b flex justify-between p-4">
+        <div className="container mx-auto p-4 flex justify-between items-center">
             <h1 className="text-3xl font-black"> <Link href={'/'}>Stock Flow</Link> </h1>
 
             <nav className="flex gap-4">

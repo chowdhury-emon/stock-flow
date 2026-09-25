@@ -38,7 +38,7 @@ export default function LoginPage() {
     return (
         <div className="grid place-items-center">
 
-            <Card className="min-w-sm">
+            <Card className="min-w-xs sm:min-w-sm">
                 <CardHeader>
                     <CardTitle>Login to your account</CardTitle>
                     <CardDescription>
